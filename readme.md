@@ -4,7 +4,6 @@
 ##System Requirements
 - PHP 5.3 or later
 - MySql
-- Composer
 - Internet (for google chart)
 
 ##Folder Structure
@@ -44,7 +43,6 @@
 - change database config in `app/config/database.php`
 
 ```php
-
 'mysql' => array(
     'driver'    => 'mysql',
     'host'      => '127.0.0.1',
@@ -55,7 +53,6 @@
     'collation' => 'utf8_unicode_ci',
     'prefix'    => '',
 ),
-
 ```
     
 - open command line and run command `php artisan migrate:install` for create migration database table
