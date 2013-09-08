@@ -42,30 +42,30 @@
 - use `git clone git@github.com:witooh/coupon.git` or download [here](https://github.com/witooh/coupon/archive/master.zip)
 - import database schema with `db.sql`
 - change database config in `app/config/database.php`
-```php
-'mysql' => array(
-    'driver'    => 'mysql',
-    'host'      => '127.0.0.1',
-    'database'  => 'coupon',
-    'username'  => 'root',
-    'password'  => '',
-    'charset'   => 'utf8',
-    'collation' => 'utf8_unicode_ci',
-    'prefix'    => '',
-),
-```
+    ```php
+    'mysql' => array(
+        'driver'    => 'mysql',
+        'host'      => '127.0.0.1',
+        'database'  => 'coupon',
+        'username'  => 'root',
+        'password'  => '',
+        'charset'   => 'utf8',
+        'collation' => 'utf8_unicode_ci',
+        'prefix'    => '',
+    ),
+    ```
 - open command line and run command `php artisan migrate:install` for create migration database table
-```sh
-$ php artisan migrate:install
-```
+    ```sh
+    $ php artisan migrate:install
+    ```
 - and then `php artisan migrate` for create shop, coupon and use_coupon database table. Migration database schemas are created in `app/database/migrations/`
-```sh
-$ php artisan migrate
-```
+    ```sh
+    $ php artisan migrate
+    ```
 - you can remove all data in database by run this command `php artisan migrate:refresh`
-```sh
-$ php artisan migrate:refresh
-```
+    ```sh
+    $ php artisan migrate:refresh
+    ```
 
 ##Using Services
 
@@ -78,14 +78,14 @@ $ php artisan migrate:refresh
     - `owner_password` `string` password of shop owner
 - example `http://<domain>/shop/create?shop_name=test&owner_username=user&owner_password=pass`
 **Output:**
-```js
-{
-    "shop_name": "test",
-    "owner_username": "user",
-    "owner_password": "ff41f462a484668de7784448623d3d0c",
-    "id": 1
-}
-```
+    ```json
+    {
+        "shop_name": "test",
+        "owner_username": "user",
+        "owner_password": "ff41f462a484668de7784448623d3d0c",
+        "id": 1
+    }
+    ```
 
 ###Create Coupon
 - method `GET`
@@ -97,21 +97,21 @@ $ php artisan migrate:refresh
     - `expire_date` `string` coupon will be expired in format `YYYY-MM-DD`
 - example `http://<domain>/coupon/create?shop_id=1&coupon_name=Buy1Get1&active_date=2013-09-01&expire_date=2013-09-31`
 **Output:**
-```js
-{
-    "shop_id": "1",
-    "coupon_name": "Buy1Get1",
-    "active_date": "2013-09-01",
-    "expire_date": "2013-09-30",
-    "id": 1,
-    "action": {
-        "coupon_id": 31,
-        "action": "active",
-        "action_time": "2013-09-08T18:46:52+07:00",
-        "id": 57
+    ```js
+    {
+        "shop_id": "1",
+        "coupon_name": "Buy1Get1",
+        "active_date": "2013-09-01",
+        "expire_date": "2013-09-30",
+        "id": 1,
+        "action": {
+            "coupon_id": 31,
+            "action": "active",
+            "action_time": "2013-09-08T18:46:52+07:00",
+            "id": 57
+        }
     }
-}
-```
+    ```
 
 ###Use Coupon
 - method `GET`
@@ -121,24 +121,24 @@ $ php artisan migrate:refresh
     - `action` `string` use coupon for `collected` or `redeemed`
 - example collected `http://<domain>/coupon/use?coupon_id=1&action=collected`
 **Output:**
-```js
-{
-    "coupon_id": "1",
-    "action": "collected",
-    "action_time": "2013-09-08T18:54:37+07:00",
-    "id": 1
-}
-```
+    ```js
+    {
+        "coupon_id": "1",
+        "action": "collected",
+        "action_time": "2013-09-08T18:54:37+07:00",
+        "id": 1
+    }
+    ```
 - example collected `http://<domain>/coupon/use?coupon_id=1&action=redeemed`
 **Output:**
-```js
-{
-    "coupon_id": "1",
-    "action": "redeemed",
-    "action_time": "2013-09-08T18:55:31+07:00",
-    "id": 2
-}
-```
+    ```js
+    {
+        "coupon_id": "1",
+        "action": "redeemed",
+        "action_time": "2013-09-08T18:55:31+07:00",
+        "id": 2
+    }
+    ```
 
 ##Statistic Page
 You can go to the statistic page by `http://<domain>/coupon/graph`
