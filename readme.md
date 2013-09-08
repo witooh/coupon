@@ -5,6 +5,7 @@
 - PHP 5.3 or later
 - MySql
 - Composer
+- Internet (for google chart)
 
 ##Folder Structure
     |- app
