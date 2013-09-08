@@ -147,4 +147,4 @@ $ php artisan migrate:refresh
 ```
 
 ##Statistic Page
-You can go to the statistic page by `http://<domain>/coupon/graph`
+You can go to the statistic page by `http://<domain>/graph`
