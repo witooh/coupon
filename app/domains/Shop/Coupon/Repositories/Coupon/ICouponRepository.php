@@ -17,4 +17,10 @@ interface ICouponRepository extends IBaseRepository
      * @return int
      */
     public function findExist($couponId);
+
+    /**
+     * @param int $couponId
+     * @return \Carbon\Carbon
+     */
+    public function findActive($couponId);
 }

@@ -1,12 +1,12 @@
 <?php
 namespace Shop\Coupon;
 
+use Carbon\Carbon;
 use Shop\Coupon\Repositories\ICouponRepository;
 use Shop\Coupon\Repositories\IUseCouponRepository;
 
 class CustomValidation
 {
-
     protected $useCouponRepository;
     protected $couponRepository;
 
@@ -31,6 +31,13 @@ class CustomValidation
         $action = $this->useCouponRepository->CurrentAction($value);
 
         return $action == $parameters[0];
+    }
+
+    public function Active($attribute, $value, $parameters)
+    {
+        $activeDate = $this->couponRepository->findActive($value);
+
+        return Carbon::now()->gte($activeDate);
     }
 
 }

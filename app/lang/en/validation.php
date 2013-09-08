@@ -70,6 +70,7 @@ return array(
     "url"              => "The :attribute format is invalid.",
 
     'not_expired'      => 'Coupon is expired',
+    'active'           => 'Coupon is not active yet',
     /*
     |--------------------------------------------------------------------------
     | Custom Validation Language Lines

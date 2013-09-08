@@ -1,8 +1,8 @@
 <?php
 namespace Shop\Manager;
 
+use Shop\Manager\Validators\Create;
 use Shop\Repositories\IShopRepository;
-use ValidatorFactory;
 
 class Manager implements IManager
 {
@@ -26,7 +26,7 @@ class Manager implements IManager
      */
     public function create($attr)
     {
-        $validator = ValidatorFactory::make('Shop\Manager\Validators\Create', $attr);
+        $validator = new Create($attr);
 
         if ($validator->failes()) {
             throw new \ValidateException($validator->getErrors());

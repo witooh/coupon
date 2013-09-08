@@ -8,7 +8,7 @@ class RedeemValidator extends BaseValidator
 {
 
     protected $rule = array(
-        'coupon_id' => 'not_expired|cur_action:"collected"',
+        'coupon_id' => 'active|not_expired|cur_action:"collected"',
     );
 
     protected $messages = array(
@@ -18,5 +18,6 @@ class RedeemValidator extends BaseValidator
     protected $extends = array(
         'Shop\Coupon\CustomValidation@CurAction',
         'Shop\Coupon\CustomValidation@NotExpired',
+        'Shop\Coupon\CustomValidation@Active',
     );
 }
