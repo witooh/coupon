@@ -78,7 +78,7 @@ $ php artisan migrate:refresh
     - `owner_password` `string` password of shop owner
 - example `http://<domain>/shop/create?shop_name=test&owner_username=user&owner_password=pass`
 **Output:**
-```json
+```js
 {
     "shop_name": "test",
     "owner_username": "user",
@@ -97,7 +97,7 @@ $ php artisan migrate:refresh
     - `expire_date` `string` coupon will be expired in format `YYYY-MM-DD`
 - example `http://<domain>/coupon/create?shop_id=1&coupon_name=Buy1Get1&active_date=2013-09-01&expire_date=2013-09-31`
 **Output:**
-```json
+```js
 {
     "shop_id": "1",
     "coupon_name": "Buy1Get1",
@@ -121,7 +121,7 @@ $ php artisan migrate:refresh
     - `action` `string` use coupon for `collected` or `redeemed`
 - example collected `http://<domain>/coupon/use?coupon_id=1&action=collected`
 **Output:**
-```json
+```js
 {
     "coupon_id": "1",
     "action": "collected",
@@ -131,7 +131,7 @@ $ php artisan migrate:refresh
 ```
 - example collected `http://<domain>/coupon/use?coupon_id=1&action=redeemed`
 **Output:**
-```json
+```js
 {
     "coupon_id": "1",
     "action": "redeemed",
