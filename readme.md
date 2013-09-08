@@ -42,7 +42,9 @@
 - use `git clone git@github.com:witooh/coupon.git` or download [here](https://github.com/witooh/coupon/archive/master.zip)
 - import database schema with `db.sql`
 - change database config in `app/config/database.php`
+
 ```php
+
 'mysql' => array(
     'driver'    => 'mysql',
     'host'      => '127.0.0.1',
@@ -53,6 +55,7 @@
     'collation' => 'utf8_unicode_ci',
     'prefix'    => '',
 ),
+
 ```
     
 - open command line and run command `php artisan migrate:install` for create migration database table
@@ -78,7 +81,8 @@ $ php artisan migrate:refresh
     - `owner_username` `string` username of shop owner
     - `owner_password` `string` password of shop owner
 - example `http://<domain>/shop/create?shop_name=test&owner_username=user&owner_password=pass`
-**Output**
+
+###Output
 
 ```js
 {
@@ -99,7 +103,8 @@ $ php artisan migrate:refresh
     - `active_date` `string` coupon will be actived in format `YYYY-MM-DD`
     - `expire_date` `string` coupon will be expired in format `YYYY-MM-DD`
 - example `http://<domain>/coupon/create?shop_id=1&coupon_name=Buy1Get1&active_date=2013-09-01&expire_date=2013-09-31`
-**Output**
+
+###Output
 
 ```js
 {
@@ -124,7 +129,8 @@ $ php artisan migrate:refresh
     - `coupin_id` `number` ID of coupon
     - `action` `string` use coupon for `collected` or `redeemed`
 - example collected `http://<domain>/coupon/use?coupon_id=1&action=collected`
-**Output**
+
+###Output
 
 ```js
 {
@@ -135,7 +141,8 @@ $ php artisan migrate:refresh
 }
 ```
 - example collected `http://<domain>/coupon/use?coupon_id=1&action=redeemed`
-**Output**
+
+###Output
 
 ```js
 {
