@@ -6,6 +6,13 @@
 - MySql
 - Internet (for google chart)
 
+##Software Architecture Used
+- Dependency injection (DI)
+- Inversion of control (IOC)
+- Database Layer (Repositories)
+- Single responsibility (One class one responsibility)
+- Design Pattern
+
 ##Folder Structure
     |- app
     |  |- config
